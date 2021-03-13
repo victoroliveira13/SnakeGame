@@ -4,7 +4,7 @@ window.onload = function () {
     document.addEventListener("keydown", keyPush);
 
     //chamada de funcao auto
-    setInterval(game, 90);
+    setInterval(game, 100);
 
     const vel = 1; //pulo de casa por chamada de funcao
     var vx = vy = 0; //velociade X e Y;
@@ -51,9 +51,11 @@ window.onload = function () {
         //tratando calda
         for (var i = 0; i < trail.length; i++) {
             ctx.fillRect(trail[i].x * peca, trail[i].y * peca, peca - 1, peca - 1);
-            if (trail[i].x == cobraX && trail[i].y == cobraY) {
-                vx = vy = 0; //gameover
+            if (trail[i].x == cobraX && trail[i].y == cobraY) { 
                 tail = 5;
+                vx = vy = 0; //gameover
+                document.getElementById("statusMaca").innerHTML = tail-5;
+                document.getElementById("statusTamanho").innerHTML = tail;
             }
         }
         trail.push({ x: cobraX, y: cobraY })
@@ -66,6 +68,8 @@ window.onload = function () {
             tail++;
             ax = Math.floor(Math.random() * qtdePeca);
             ay = Math.floor(Math.random() * qtdePeca);
+            document.getElementById("statusMaca").innerHTML = tail-5;
+            document.getElementById("statusTamanho").innerHTML = tail;
         }
 
     }
