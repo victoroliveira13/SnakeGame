@@ -6,25 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <style>
-        #cell {
-            padding: 20px 0 30px;
-            background-color: white;
-            border: 0.3px solid rgb(202, 202, 202);
-            border-radius: 8px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-        #status{
-
-        }
-    </style>
 
     <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -33,19 +19,32 @@
 </head>
 
 <body>
+
     <div id="cell">
-        <canvas id="stage" width="450" height="450" style="border-top:1px solid rgb(202, 202, 202);border-bottom:1px solid rgb(202, 202, 202);"></canvas>
+        <div id="status" class="row">
+            <div class="col-6">
+                <div class="row g-0">
+                    <div class="col-sm-4"><img src="img/apple.png" class=""></div>
+                    <div class="col-sm-8">
+                        <h6>Maças: <a id="statusMaca">0</a></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row g-0">
+                    <div class="col-sm-4"><img src="img/score.png"></div>
+                    <div class="col-sm-8">
+                        <h6>Tamanho: <a id="statusTamanho">5</a></h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <canvas id="stage" width="450" height="450" style="border-bottom:1px solid rgb(202, 202, 202);"></canvas>
         <div class="position-absolute bottom-0 start-50 translate-middle-x"><i class="fas fa-circle fa-2x"
                 style="color:gray;"></i></div>
     </div>
-    <div id="status">
-        <div>
-            <h6>Maças: <a id="statusMaca">0</a></h6>
-        </div>
-        <div>
-            <h6>Tamanho: <a id="statusTamanho">5</a></h6>
-        </div>
-    </div>
+
 </body>
 
 </html>

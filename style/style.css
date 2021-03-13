@@ -1,0 +1,29 @@
+#cell {
+    padding: 25px 0 30px;
+    background-color: white;
+    border: 0.3px solid rgb(202, 202, 202);
+    border-radius: 8px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#status {
+    background-color: rgb(20, 20, 20);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    margin: 0;
+    border: 0;
+}
+
+h6 {
+    margin-bottom: 0;
+    padding-top: 3px;
+}
+
+img {
+    width: 1rem;
+    vertical-align: middle;
+    margin: 0 auto;
+}
