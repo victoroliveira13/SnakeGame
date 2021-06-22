@@ -7,7 +7,8 @@ O tradicional jogo da cobrinha para web.
 
 Para criação da página, utilizei HTML, CSS e Javascript, sendo os elementos chaves o localStorage para amarzenagem da maior pontuação do usuário, e o canvas para renderização da tela de jogo.
 
+<img src="template.gif" />
+
 Bibliotecas adicionais:
 
 * [Bootstrap](https://getbootstrap.com)
-
