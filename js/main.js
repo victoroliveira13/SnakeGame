@@ -17,6 +17,15 @@ window.onload = function () {
     var trail = [];
     tail = 5;
 
+    if(localStorage.getItem("score") == null) {
+        localStorage.setItem("score", tail);
+        var score = localStorage.getItem("score");
+        console.log("5");
+    }else{
+        var score = localStorage.getItem("score");
+        console.log(score);
+    }
+
     function game() {
         cobraX += vx;
         cobraY += vy;
@@ -51,10 +60,12 @@ window.onload = function () {
         //tratando calda
         for (var i = 0; i < trail.length; i++) {
             ctx.fillRect(trail[i].x * peca, trail[i].y * peca, peca - 1, peca - 1);
-            if (trail[i].x == cobraX && trail[i].y == cobraY) { 
+            if (trail[i].x == cobraX && trail[i].y == cobraY) {
                 tail = 5;
                 vx = vy = 0; //gameover
-                document.getElementById("statusMaca").innerHTML = tail-5;
+                document.getElementById("score").innerHTML = score;
+                document.getElementById("menu").style.display = "block";
+                document.getElementById("statusMaca").innerHTML = tail - 5;
                 document.getElementById("statusTamanho").innerHTML = tail;
             }
         }
@@ -66,9 +77,13 @@ window.onload = function () {
         //tratando captura da maca
         if (ax == cobraX && ay == cobraY) {
             tail++;
+            if(score < tail){
+                localStorage.setItem("score", tail);
+                score = tail;
+            }
             ax = Math.floor(Math.random() * qtdePeca);
             ay = Math.floor(Math.random() * qtdePeca);
-            document.getElementById("statusMaca").innerHTML = tail-5;
+            document.getElementById("statusMaca").innerHTML = tail - 5;
             document.getElementById("statusTamanho").innerHTML = tail;
         }
 
@@ -82,24 +97,28 @@ window.onload = function () {
 
             //left
             if (tecla == 37 && ultimaTecla != 39) {
+                document.getElementById("menu").style.display = "none";
                 ultimaTecla = 37;
                 vx = -vel;
                 vy = 0;
             }
             //up
             if (tecla == 38 && ultimaTecla != 40) {
+                document.getElementById("menu").style.display = "none";
                 ultimaTecla = 38;
                 vx = 0;
                 vy = -vel;
             }
             //right
             if (tecla == 39 && ultimaTecla != 37) {
+                document.getElementById("menu").style.display = "none";
                 ultimaTecla = 39;
                 vx = vel;
                 vy = 0;
             }
             //down
             if (tecla == 40 && ultimaTecla != 38) {
+                document.getElementById("menu").style.display = "none";
                 ultimaTecla = 40;
                 vx = 0;
                 vy = vel;
